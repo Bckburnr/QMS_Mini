@@ -38,7 +38,7 @@ A minimal Flask/SQLite app for tracking issues (deviations, CAPAs, equipment pro
 
 5. Visit `http://localhost:5000` in your browser.
 
-## Portfolio Flex
+## Why?
 
 - Real CRUD logic, SQLite database
 - Compliance-style audit logging
