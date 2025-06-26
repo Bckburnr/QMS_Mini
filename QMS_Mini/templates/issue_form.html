@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ issue and "Edit Issue" or "Log New Issue" }}</h2>
+<form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="{{ issue.title if issue else '' }}" required>
+
+    <label for="description">Description</label>
+    <textarea name="description" id="description">{{ issue.description if issue else '' }}</textarea>
+
+    <label for="status">Status</label>
+    <select name="status" id="status">
+        {% for s in ['Open', 'In Progress', 'Closed'] %}
+        <option value="{{ s }}" {% if issue and issue.status==s %}selected{% endif %}>{{ s }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

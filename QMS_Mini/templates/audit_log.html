@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Full Audit Log</h2>
+<ul>
+    {% for log in logs %}
+        <li>
+            Issue #{{ log.issue_id }} — {{ log.action }} ({{ log.timestamp }}): {{ log.details }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

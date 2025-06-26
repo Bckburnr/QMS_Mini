@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Issue #{{ issue.id }} — {{ issue.title }}</h2>
+<p><strong>Status:</strong> {{ issue.status }}</p>
+<p><strong>Description:</strong> {{ issue.description }}</p>
+
+<h3>Audit Trail</h3>
+<ul>
+    {% for log in audit %}
+        <li><strong>{{ log.timestamp }}:</strong> {{ log.action }} ({{ log.details }})</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('issue_edit', issue_id=issue.id) }}">Edit Issue</a>
+{% if issue.status != 'Closed' %}
+    <form action="{{ url_for('issue_close', issue_id=issue.id) }}" method="post" style="display:inline;">
+        <button type="submit">Close</button>
+    </form>
+{% endif %}
+<form action="{{ url_for('issue_delete', issue_id=issue.id) }}" method="post" style="display:inline;">
+    <button type="submit">Delete</button>
+</form>
+{% endblock %}

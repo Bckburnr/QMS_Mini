@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Issues</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    {% for issue in issues %}
+    <tr>
+        <td>{{ issue.id }}</td>
+        <td><a href="{{ url_for('issue_detail', issue_id=issue.id) }}">{{ issue.title }}</a></td>
+        <td>{{ issue.status }}</td>
+        <td>
+            <a href="{{ url_for('issue_edit', issue_id=issue.id) }}">Edit</a>
+            {% if issue.status != 'Closed' %}
+                <form action="{{ url_for('issue_close', issue_id=issue.id) }}" method="post" style="display:inline;">
+                    <button type="submit">Close</button>
+                </form>
+            {% endif %}
+            <form action="{{ url_for('issue_delete', issue_id=issue.id) }}" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
