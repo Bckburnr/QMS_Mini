@@ -46,4 +46,9 @@ A minimal Flask/SQLite app for tracking issues (deviations, CAPAs, equipment pro
 
 ---
 
-Made by [Charles Kwena]
+## ✍️ Author
+
+**Charles Kwena**  
+Systems Validation | Quality | Python Dev-in-Progress  
+🔗 [LinkedIn](https://www.linkedin.com/in/charles-k-a198b9137/)  
+📍 Based in NJ | Open to Remote & Hybrid Roles  
