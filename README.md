@@ -1,6 +1,6 @@
 # QMS Mini — Issue Tracking & Audit Log System
 
-A minimal Flask/SQLite app for tracking issues (deviations, CAPAs, equipment problems) with full audit logging, designed to mimic real-world pharma/biotech validation logic.
+A minimal Flask/SQLite app for tracking issues (deviations, CAPAs, equipment problems) with full audit logging, designed to mimic real world pharma/biotech validation logic.
 
 ## Features
 
